@@ -1,0 +1,48 @@
+* {
+    background-color: #091133;
+    color: #889399;
+    font-family: 'Quicksand';
+}
+
+body {
+    font-size: 24px;
+}
+
+.login {    
+    text-align: center;
+}
+
+
+.btn {
+    padding: 2px;
+    margin: 2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.body-night {
+    color: #a3b3bb;
+}
+
+
+.kuaker-colors {
+    background-color: #87CEFA;
+    color: #4488ee;
+}
+
+.text-option {
+    color: #091133;
+}
