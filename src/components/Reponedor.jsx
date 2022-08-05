@@ -3,10 +3,13 @@
 
 import React from 'react';
 
+import Header from './Header';
+
 const Reponedor = () => {
     return (
         <div>
-            Reponedor
+            <Header />
+            Portal del Reponedor
         </div>
     )
 }

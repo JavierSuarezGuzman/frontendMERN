@@ -8,14 +8,17 @@ body {
     font-size: 24px;
 }
 
-.login {    
+.login {
     text-align: center;
 }
 
 
-.btn {
-    padding: 2px;
-    margin: 2px;
+li {
+    list-style: none;
+}
+
+.inicio {
+    text-align: right;
 }
 
 

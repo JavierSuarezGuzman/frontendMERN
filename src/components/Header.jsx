@@ -4,15 +4,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import Header from './Header';
+import { ReactComponent as Logo } from "../assets/crown.svg";
 
-const Login = () => {
+const Header = () => {
     return (
         <div>
-            <Header />
-            <nav className='login'>
-                <h1>Identifícate como:</h1>
+            <ul>
                 <li>
+                    <Link to="/">
+                    <Logo />
+                    </Link>
+                </li>
+
+                {/* <li>
                     <Link to="/admin">Administrador/a</Link>
                 </li>
                 <li>
@@ -20,10 +24,10 @@ const Login = () => {
                 </li>
                 <li>
                     <Link to="/vendedor">Vendedor/a</Link>
-                </li>
-            </nav>
+                </li> */}
+            </ul>
         </div>
     )
 }
 
-export default Login;
+export default Header;

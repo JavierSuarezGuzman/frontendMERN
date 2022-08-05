@@ -3,10 +3,13 @@
 
 import React from 'react';
 
+import Header from './Header';
+
 const Admin = () => {
     return (
         <div>
-            Admin
+            <Header />
+            Portal del Admin
         </div>
     )
 }

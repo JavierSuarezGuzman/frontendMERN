@@ -3,10 +3,13 @@
 
 import React from 'react';
 
+import Header from './Header';
+
 const Vendedor = () => {
     return (
         <div>
-            Vendedor
+            <Header />
+            Portal del Vendedor
         </div>
     )
 }
