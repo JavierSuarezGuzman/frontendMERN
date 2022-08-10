@@ -10,6 +10,7 @@ const Reponedor = () => {
         <div>
             <Header />
             Portal del Reponedor
+            
         </div>
     )
 }

@@ -18,6 +18,7 @@ const App = () => {
 
                     <Route exact path="/" component={Login} />
                     <Route exact path="/admin" component={Admin} />
+                    {/* falta un portal para  */}
                     <Route exact path="/reponedor" component={Reponedor} />
                     <Route exact path="/vendedor" component={Vendedor} />
                     <Redirect to="/" />
