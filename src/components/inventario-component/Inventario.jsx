@@ -3,14 +3,12 @@
 
 import React from 'react';
 
-const Fact = () => {
+const Inventario = () => {
     return (
         <>
-            <div>Factura</div>
+            <div>Vista de inventario</div>
             <div>Nombre Producto</div>
             <input type="text"></input>
-            <div>Precio</div>
-            <input type="number"></input>
             <div>Cantidad</div>
             <input type="number"></input>
             <div>
@@ -20,4 +18,4 @@ const Fact = () => {
     )
 }
 
-export default Fact;
+export default Inventario;

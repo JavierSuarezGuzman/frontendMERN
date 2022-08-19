@@ -5,6 +5,7 @@ import React from 'react';
 
 import Header from '../components/Header';
 import Boleta from '../components/boleta-component/Boleta';
+import Footer from '../components/Footer';
 
 const Vendedor = () => {
     return (
@@ -12,6 +13,8 @@ const Vendedor = () => {
             <Header />
             Portal del Vendedor
             <Boleta />
+
+            <Footer />
         </div>
     )
 }

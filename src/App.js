@@ -8,6 +8,7 @@ import Login from './pages/Login';
 import Admin from './pages/Admin';
 import Reponedor from './pages/Reponedor';
 import Vendedor from './pages/Vendedor';
+/* import Inventario from './components/inventario-component/Inventario'; */
 
 const App = () => {
     return (
@@ -18,7 +19,11 @@ const App = () => {
                     <Route exact path="/admin" element={<Admin />} />
                     <Route exact path="/reponedor" element={<Reponedor />} />
                     <Route exact path="/vendedor" element={<Vendedor />} />
-                    {/* <Navigate to="/" /> //aquí se debe entrar la ruta por defecto en caso de escribir una url inválida */}
+                    {/* <Route exact path="/inventario" element={<Inventario />} /> //evaluar si será un componente o una page */}
+
+                    {/* <Navigate to="/" /> //aquí se debe entrar la ruta por defecto en caso de escribir una url inválida 
+                    pero no me funcionó con Navigate, se cae la APP*/}
+
                 </Routes>
             </BrowserRouter>
         </>

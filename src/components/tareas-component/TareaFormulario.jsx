@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-import { v4 as uuidv4 } from 'uuid';
 
 function TareaFormulario(props) {
 
@@ -14,7 +13,6 @@ function TareaFormulario(props) {
     e.preventDefault();
     
     const tareaNueva = {
-      id: uuidv4(),
       texto: input,
       completada: false
     }

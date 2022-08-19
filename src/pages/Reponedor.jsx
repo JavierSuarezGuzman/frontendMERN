@@ -5,6 +5,7 @@ import React from 'react';
 
 import Header from '../components/Header';
 import Fact from '../components/fact-components/Fact';
+import Footer from '../components/Footer';
 
 const Reponedor = () => {
     return (
@@ -13,6 +14,7 @@ const Reponedor = () => {
             Portal del Reponedor
             <Fact />
             
+            <Footer />
         </div>
     )
 }

@@ -1,7 +1,11 @@
+/* Javier Suárez Guzmán
+    Agosto 2022 */
+
 * {
     background-color: #091133;
     color: #889399;
     font-family: 'Quicksand';
+    box-sizing: border-box; /* Should be removed. Only for demonstration */
 }
 
 body {
@@ -21,10 +25,29 @@ li {
     text-align: right;
 }
 
+.App-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
 
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px;    /* Should be removed. Only for demonstration */
+}
 
-
-
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
 
 
 
