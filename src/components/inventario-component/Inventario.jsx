@@ -5,44 +5,44 @@ import React, { useState } from 'react';
 
 function Inventario() {
 
-    const [name, setName] = useState("");
-    const [allData, setAllData] = useState([]);
-    const [show, setShow] = useState(false);
-    const [editIndex, setEditIndex] = useState();
+    const [producto, setProducto] = useState("");
+    const [textoProducto, setTextoProducto] = useState([]);
+    const [cambiarBoton, setCambiarBoton] = useState(false);
+    const [editarIndice, setEditarIndice] = useState();
 
     const handleAdd = () => {
-        if (name.length !== 0) {
-            setAllData(newData => [...newData, name]);
-            setName("");
+        if (producto.length !== 0) {
+            setTextoProducto(newData => [...newData, producto]);
+            setProducto("");
         }
     }
 
     const handleDelete = (index) => {
-        allData.splice(index, 1);
-        setAllData([...allData]);
+        textoProducto.splice(index, 1);
+        setTextoProducto([...textoProducto]);
     }
 
     const handleEdit = (i) => {
-        setName(allData[i]);
-        setShow(true);
-        setEditIndex(i);
+        setProducto(textoProducto[i]);
+        setCambiarBoton(true);
+        setEditarIndice(i);
     }
     const handleUpdate = () => {
-        allData.splice(editIndex, 1, name);
-        setAllData([...allData]);
-        setShow(false);
-        setName("");
+        textoProducto.splice(editarIndice, 1, producto);
+        setTextoProducto([...textoProducto]);
+        setCambiarBoton(false);
+        setProducto("");
     }
 
     return (
         <div>
             <div>Vista de inventario</div>
-            <input value={name} onChange={(e) => setName(e.target.value)} />
-            {!show ? <button onClick={handleAdd}>Agregar</button> :
+            <input value={producto} onChange={(e) => setProducto(e.target.value)} />
+            {!cambiarBoton ? <button onClick={handleAdd}>Agregar</button> :
                 <button onClick={handleUpdate}>Modificar</button>}
 
             {
-                allData.map((val, i) =>
+                textoProducto.map((val, i) =>
                     <div>
                         {val} &nbsp;
                         <button onClick={() => handleEdit(i)} >Editar</button>

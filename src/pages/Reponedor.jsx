@@ -11,7 +11,7 @@ const Reponedor = () => {
     return (
         <div>
             <Header />
-            Portal del Reponedor
+            Portal Reponedor/a
             <Fact />
             
             <Footer />

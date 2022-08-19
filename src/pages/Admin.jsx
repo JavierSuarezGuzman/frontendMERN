@@ -13,9 +13,9 @@ const Admin = () => {
         <div>
             <Header />
             <div>
-                Portal del Admin
+                Portal Administrador/a
                 <div className='row'>
-                    <div className='column'> Tareas <ListaDeTareas /></div>
+                    <div className='column'> <ListaDeTareas /></div>
                     <div className='column'> <Inventario /></div>
                 </div>
                 <Footer />

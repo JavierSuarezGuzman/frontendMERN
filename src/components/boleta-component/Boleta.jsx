@@ -2,27 +2,29 @@
     Agosto 2022 */
 
 import React, { useRef } from 'react';
-import { useReactToPrint } from "react-to-print";
+import { useReactToPrint } from "react-to-print"; //paquete para poder imprimir en React https://github.com/gregnb/react-to-print
 
 const Boleta = () => {
-    const componentRef = useRef();
+    const componenteAImprimir = useRef();
+
     const handlePrint = useReactToPrint({
-        content: () => componentRef.current,
+        content: () => componenteAImprimir.current,
     });
+
     return (
         <>
-            <div ref={componentRef}>
+            <div ref={componenteAImprimir}>
                 <div>Boleta</div>
                 <div>Nro. Boleta</div>
                 <input type="number"></input>
-                <div>Precio</div>
+                <div>Total</div>
                 <input type="number"></input>
             </div>
             <div>
                 <button onClick={handlePrint}>imprimir</button>
             </div>
         </>
-    )
+    );
 }
 
 export default Boleta;

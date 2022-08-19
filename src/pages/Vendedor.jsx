@@ -11,7 +11,7 @@ const Vendedor = () => {
     return (
         <div>
             <Header />
-            Portal del Vendedor
+            Portal Vendedor/a
             <Boleta />
 
             <Footer />

@@ -5,43 +5,44 @@ import React, { useState } from 'react';
 
 function ListaDeTareas() {
 
-  const [name, setName] = useState("");
-  const [allData, setAllData] = useState([]);
-  const [show, setShow] = useState(false);
-  const [editIndex, setEditIndex] = useState();
+  const [tarea, setTarea] = useState("");
+  const [textoTarea, setTextoTarea] = useState([]);
+  const [cambiarBoton, setCambiarBoton] = useState(false);
+  const [editarIndice, setEditarIndice] = useState();
 
   const handleAdd = () => {
-    if (name.length !== 0) {
-      setAllData(newData => [...newData, name]);
-      setName("");
+    if (tarea.length !== 0) {
+      setTextoTarea(newTarea => [...newTarea, tarea]);
+      setTarea("");
     }
   }
 
   const handleDelete = (index) => {
-    allData.splice(index, 1);
-    setAllData([...allData]);
+    textoTarea.splice(index, 1);
+    setTextoTarea([...textoTarea]);
   }
 
   const handleEdit = (i) => {
-    setName(allData[i]);
-    setShow(true);
-    setEditIndex(i);
+    setTarea(textoTarea[i]);
+    setCambiarBoton(true);
+    setEditarIndice(i);
   }
   const handleUpdate = () => {
-    allData.splice(editIndex, 1, name);
-    setAllData([...allData]);
-    setShow(false);
-    setName("");
+    textoTarea.splice(editarIndice, 1, tarea);
+    setTextoTarea([...textoTarea]);
+    setCambiarBoton(false);
+    setTarea("");
   }
 
   return (
     <div>
-      <input value={name} onChange={(e) => setName(e.target.value)} />
-      {!show ? <button onClick={handleAdd}>Agregar</button> :
+      <div>Tareas</div>
+      <input value={tarea} placeholder="Agrega una tarea" onChange={(e) => setTarea(e.target.value)} />
+      {!cambiarBoton ? <button onClick={handleAdd}>Agregar</button> :
         <button onClick={handleUpdate}>Modificar</button>}
 
       {
-        allData.map((val, i) =>
+        textoTarea.map((val, i) =>
           <div>
             {val} &nbsp;
             <button onClick={() => handleEdit(i)} >Editar</button>
