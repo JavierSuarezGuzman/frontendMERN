@@ -15,3 +15,11 @@ root.render(
     <App />
 
 );
+
+
+/* //otra forma de renderizar el componente App
+
+ReactDOM.render(
+    <App />
+    document.querySelector(#root)
+); */

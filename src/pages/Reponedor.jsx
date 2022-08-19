@@ -3,13 +3,15 @@
 
 import React from 'react';
 
-import Header from './Header';
+import Header from '../components/Header';
+import Fact from '../components/fact-components/Fact';
 
 const Reponedor = () => {
     return (
         <div>
             <Header />
             Portal del Reponedor
+            <Fact />
             
         </div>
     )

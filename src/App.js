@@ -2,28 +2,24 @@
     Agosto 2022 */
 
 import React from 'react';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
-import Login from './components/Login';
-import Admin from './components/Admin';
-import Reponedor from './components/Reponedor';
-import Vendedor from './components/Vendedor';
-
+import Login from './pages/Login';
+import Admin from './pages/Admin';
+import Reponedor from './pages/Reponedor';
+import Vendedor from './pages/Vendedor';
 
 const App = () => {
     return (
         <>
             <BrowserRouter>
-                <Switch>
-
-                    <Route exact path="/" component={Login} />
-                    <Route exact path="/admin" component={Admin} />
-                    {/* falta un portal para  */}
-                    <Route exact path="/reponedor" component={Reponedor} />
-                    <Route exact path="/vendedor" component={Vendedor} />
-                    <Redirect to="/" />
-
-                </Switch>
+                <Routes>
+                    <Route exact path="/" element={<Login />} />
+                    <Route exact path="/admin" element={<Admin />} />
+                    <Route exact path="/reponedor" element={<Reponedor />} />
+                    <Route exact path="/vendedor" element={<Vendedor />} />
+                    {/* <Navigate to="/" /> //aquí se debe entrar la ruta por defecto en caso de escribir una url inválida */}
+                </Routes>
             </BrowserRouter>
         </>
 
