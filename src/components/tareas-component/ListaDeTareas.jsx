@@ -1,34 +1,56 @@
+/* Javier Suárez Guzmán
+    Agosto 2022 */
+
 import React, { useState } from 'react';
-import TareaFormulario from './TareaFormulario';
-import Tarea from './Tarea';
 
 function ListaDeTareas() {
 
-  const [tareas, setTareas] = useState([]);
+  const [name, setName] = useState("");
+  const [allData, setAllData] = useState([]);
+  const [show, setShow] = useState(false);
+  const [editIndex, setEditIndex] = useState();
 
-  const agregarTarea = tarea => {
-    if (tarea.texto.trim()) {
-      tarea.texto = tarea.texto.trim();
-      const tareasActualizadas = [tarea, ...tareas];
-      setTareas(tareasActualizadas);
+  const handleAdd = () => {
+    if (name.length !== 0) {
+      setAllData(newData => [...newData, name]);
+      setName("");
     }
   }
-  
+
+  const handleDelete = (index) => {
+    allData.splice(index, 1);
+    setAllData([...allData]);
+  }
+
+  const handleEdit = (i) => {
+    setName(allData[i]);
+    setShow(true);
+    setEditIndex(i);
+  }
+  const handleUpdate = () => {
+    allData.splice(editIndex, 1, name);
+    setAllData([...allData]);
+    setShow(false);
+    setName("");
+  }
+
   return (
-    <>
-      <TareaFormulario onSubmit={agregarTarea} />
-      <div className='tareas-lista-contenedor'>
-        {
-          tareas.map((tarea) =>
-            <Tarea
-              key={tarea.id}
-              id={tarea.id} 
-              texto={tarea.texto} />
-          ) 
-        }
-      </div>
-    </>
-  );    
+    <div>
+      <input value={name} onChange={(e) => setName(e.target.value)} />
+      {!show ? <button onClick={handleAdd}>Agregar</button> :
+        <button onClick={handleUpdate}>Modificar</button>}
+
+      {
+        allData.map((val, i) =>
+          <div>
+            {val} &nbsp;
+            <button onClick={() => handleEdit(i)} >Editar</button>
+            <button onClick={() => handleDelete(i)}>Eliminar</button>
+          </div>
+        )
+      }
+    </div>
+  );
 }
 
 export default ListaDeTareas;
