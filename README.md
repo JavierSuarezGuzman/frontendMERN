@@ -1,3 +1,8 @@
+#  frontendMERN
+Front-End realizado para proyecto del stack MERN como parte del proceso de práctica en ACL.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
